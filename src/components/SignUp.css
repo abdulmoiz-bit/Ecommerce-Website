@@ -1,0 +1,13 @@
+.signup-container {
+  min-height: 90vh;
+}
+@media screen and (min-width: 600px) {
+  .SignUp {
+    padding: 60px 0;
+  }
+
+  .SignUp form {
+    margin: 0 auto;
+    max-width: 320px;
+  }
+}

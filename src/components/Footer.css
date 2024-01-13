@@ -1,0 +1,17 @@
+.footer {
+   background-color:  rgb(235, 225, 230);
+    min-height: 30vh;
+    min-width: 100vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .footer-text {
+    color: rgb(0, 0, 0);
+    position: absolute;
+    bottom: 3rem;
+    text-align: center;
+    padding: 0rem 1rem;
+  }
+  
