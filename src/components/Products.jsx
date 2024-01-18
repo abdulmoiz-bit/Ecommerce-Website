@@ -7,25 +7,37 @@ import "./Products.css"
 const Products = () => {
 
     const [products, setProducts] = useState(DATA)
+    const [filter, setFilter] = useState(products)
+
+    const filterProducts = (category) => {
+        let filter = products
+        if (category === "ALL") {
+            setFilter(filter)
+        } else {
+            filter = products.filter((item) => {
+                return item.category === category
+            })
+            setFilter(filter)
+        }
+    }
 
     return (
         <>
-            <div>
                 <div style={{marginTop: "4rem"}}>
                     <h1 style={{ textAlign: "center" }}>PRODUCTS</h1>
                 </div>
 
-                <div className="grid-products">
                     <div className='category-list'>
-                        <p>All </p>
-                        <p>Men Clothing </p>
-                        <p>Women Clothing </p>
-                        <p>Jewelery </p>
-                        <p>Electronics </p>
+                       <button className="btn" onClick={() => filterProducts("ALL")}>ALL</button>
+                       <button className="btn" onClick={() => filterProducts("Chairs")}>Chairs</button>
+                       <button className="btn" onClick={() => filterProducts("Electronics")}>Electronics</button>
+                       <button className="btn" onClick={() => filterProducts("Lamps")}>lamps</button>
+                       <button className="btn" onClick={() => filterProducts("Kitchen Accessories")}>Kitchen Accessories</button>
+                       <button className="btn" onClick={() => filterProducts("Sofas")}>Sofas</button>
                     </div>
 
                     <div className="products">
-                        {products.map((item) => {
+                        {filter.map((item) => {
                             return (
                                 <div className='card' key={item.id}>
                                     <div className='image-box'>
@@ -40,10 +52,6 @@ const Products = () => {
                             )
                         })}
                     </div>
-
-                </div>
-
-            </div>
         </>
     )
 }

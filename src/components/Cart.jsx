@@ -43,7 +43,7 @@ const Cart = () => {
             {state.length !== 0 && state.map((cartItem) => (
                 <div className="container px-4 my-5" key={cartItem.id}>
                     <div className="container p-4">
-                        <button onClick={() => dispatch(delCart(cartItem))} className='btn-close float-end' aria-label='Close'></button>
+                        <button onClick={() => dispatch(delCart(cartItem))} className='btn-close' aria-label='Close'></button>
                         <div className="row">
                             <div className="col-md-4 text-center mb-5" >
                                 <img src={cartItem.img} alt={cartItem.title} height="200px" width="180px" />
@@ -91,8 +91,8 @@ const Cart = () => {
                         <div className="container ">
                             <div className="row">
                                 <div className="container text-center">
-                                    <NavLink className='btn cartbtn mb-3 ' to="/checkout">Proceed to Checkout</NavLink> &nbsp;
-                                    <button className='btn cartbtn mb-3' onClick={() => dispatch(clearCart())}>Clear Cart</button>
+                                    <NavLink className='btn mb-3 ' to="/checkout">Proceed to Checkout</NavLink> &nbsp;
+                                    <button className='btn mb-3' onClick={() => dispatch(clearCart())}>Clear Cart</button>
                                 </div>
                             </div>
                         </div>

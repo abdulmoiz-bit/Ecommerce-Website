@@ -35,11 +35,9 @@ const Product = () => {
         <div className='singleproduct-details'>
           <h1>{product.title}</h1>
           <p>{product.desc}</p>
-          <button className='btn singleproduct-button' onClick={() => dispatch(addCart(product))}>Add to Cart</button>
+          <button className='btn' onClick={() => dispatch(addCart(product))}>Add to Cart</button>
         </div>
       </div>
-
-
 
       <div className='comment-section'>
       </div>
