@@ -68,9 +68,9 @@ const Cart = () => {
                                         incCart(dispatch(cartItem))
                                     }>+</button>
                                 </div>
-                                <div>
-                                    <button className="btn cartbtn mt-2" onClick={() => dispatch(delCart(cartItem))}> Remove From Cart</button>
-                                </div>
+
+                                <button className="btn mt-2" onClick={() => dispatch(delCart(cartItem))}> Remove From Cart</button>
+
                             </div>
 
                         </div>

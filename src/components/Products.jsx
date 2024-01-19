@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import DATA from "../Data"
 import "./Products.css"
@@ -23,35 +23,33 @@ const Products = () => {
 
     return (
         <>
-                <div style={{marginTop: "4rem"}}>
-                    <h1 style={{ textAlign: "center" }}>PRODUCTS</h1>
+            <div className='products-section'>
+                <div className='category-list'>
+                    <button className="btn" onClick={() => filterProducts("ALL")}>ALL</button>
+                    <button className="btn" onClick={() => filterProducts("Chairs")}>Chairs</button>
+                    <button className="btn" onClick={() => filterProducts("Electronics")}>Electronics</button>
+                    <button className="btn" onClick={() => filterProducts("Lamps")}>lamps</button>
+                    <button className="btn" onClick={() => filterProducts("Kitchen Accessories")}>Kitchen Accessories</button>
+                    <button className="btn" onClick={() => filterProducts("Sofas")}>Sofas</button>
                 </div>
 
-                    <div className='category-list'>
-                       <button className="btn" onClick={() => filterProducts("ALL")}>ALL</button>
-                       <button className="btn" onClick={() => filterProducts("Chairs")}>Chairs</button>
-                       <button className="btn" onClick={() => filterProducts("Electronics")}>Electronics</button>
-                       <button className="btn" onClick={() => filterProducts("Lamps")}>lamps</button>
-                       <button className="btn" onClick={() => filterProducts("Kitchen Accessories")}>Kitchen Accessories</button>
-                       <button className="btn" onClick={() => filterProducts("Sofas")}>Sofas</button>
-                    </div>
-
-                    <div className="products">
-                        {filter.map((item) => {
-                            return (
-                                <div className='card' key={item.id}>
-                                    <div className='image-box'>
-                                        <img src={item.img} alt={item.title} height="200px" width="200px" />
-                                    </div>
-                                    <h5 className='text-center'>{item.title.substring(0, 12)}</h5>
-                                    <p className='text-center'>${item.price}</p>
-                                    <NavLink to={`/product/${item.id}`} className="btn">
-                                        View Details
-                                    </NavLink>
+                <div className="products" style={{marginTop: "5rem"}}>
+                    {filter.map((item) => {
+                        return (
+                            <div className='card' key={item.id}>
+                                <div className='image-box'>
+                                    <img src={item.img} alt={item.title} height="200px" width="200px" />
                                 </div>
-                            )
-                        })}
-                    </div>
+                                <h5 className='text-center'>{item.title.substring(0, 12)}</h5>
+                                <p className='text-center'>${item.price}</p>
+                                <NavLink to={`/product/${item.id}`} className="btn">
+                                    View Details
+                                </NavLink>
+                            </div>
+                        )
+                    })}
+                </div>
+            </div>
         </>
     )
 }

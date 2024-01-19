@@ -1,13 +1,7 @@
-/*
-.grid-products {
-  display: grid;
-  grid-template-columns: 20vw 78vw;
-  grid-template-rows: auto;
-  margin: 4rem 0rem;
+.products-section{
+  margin: 5rem 0rem 8rem;
 }
-*/
 .category-list {
-  font-weight: 700;
   font-size: 20px;
   text-align: center;
 }
@@ -26,16 +20,16 @@
 }
 
 .btn {
-  border-radius: 0%;
   background-color:  rgb(235, 225, 230);
-  border: 1px solid rgb(0, 0, 0);
+  margin: 4px 10px;
+  padding: 8px 20px;
 }
 
 .products{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   gap: 10px;
-  margin: 1rem;
+  margin: 0rem 1rem;
 }
 
 @media screen and (max-width: 600px) {
